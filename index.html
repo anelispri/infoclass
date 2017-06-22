@@ -13,8 +13,8 @@
     </div>
 
     <script>
-    window.lat = 37.8199;
-    window.lng = -122.4783;
+    window.lat = -41.8199;
+    window.lng = -72.4783;
     var map;
     var mark;
     var lineCoords = [];
@@ -46,7 +46,7 @@
     pubnub.subscribe({channels: [pnChannel]});
     pubnub.addListener({message:redraw});
     setInterval(function() {
-      pubnub.publish({channel:pnChannel, message:{lat:window.lat + 0.001, lng:window.lng + 0.01}});
+      pubnub.publish({channel:pnChannel, message:{lat:window.lat - 0.001, lng:window.lng - 0.01}});
     }, 5000);
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA1i6KG6848oX52ucepDx7I2TlPVyZW7XU&callback=initialize"></script>
